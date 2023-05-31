@@ -34,6 +34,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomer(Long customerId) {
-        return null;
+        return customerMapper.toDto(customerRepo.findById(customerId).orElse(null));
     }
 }
