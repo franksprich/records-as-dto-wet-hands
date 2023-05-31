@@ -2,14 +2,11 @@ package edu.spring.records.service.impl;
 
 import edu.spring.records.mapper.CustomerMapper;
 import edu.spring.records.model.dto.Customer;
-import edu.spring.records.model.entity.CustomerEntity;
 import edu.spring.records.repo.CustomerRepo;
 import edu.spring.records.service.CustomerService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * {DESCRIPTION}

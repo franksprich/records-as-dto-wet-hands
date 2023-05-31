@@ -1,6 +1,6 @@
 package edu.spring.records.repo;
 
-import edu.spring.records.model.entity.CustomerEntity;
+import edu.spring.records.model.entity.CustomerET;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Frank Sprich
  */
-public interface CustomerRepo extends JpaRepository<CustomerEntity, Long> {
+public interface CustomerRepo extends JpaRepository<CustomerET, Long> {
 }

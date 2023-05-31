@@ -3,7 +3,6 @@ package edu.spring.records.model.entity;
 import edu.spring.records.model.Gender;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
 
 /**
  * {DESCRIPTION}
@@ -13,7 +12,7 @@ import lombok.ToString;
 @Data
 @Entity
 @Table(name = "Customer")
-public class CustomerEntity {
+public class CustomerET {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +24,4 @@ public class CustomerEntity {
     private Integer age;
     private String username;
 
-    @Override
-    public String toString() {
-        return "CustomerEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", age=" + age +
-                ", username='" + username + '\'' +
-                '}';
-    }
 }
