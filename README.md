@@ -1,5 +1,27 @@
 # HOW TO DO / FIX...
 
+## Breaching the DTO Convention
+**As of my opinion**... it is better to NOT use the DTO postfix for transfer objects e.g.
+**~~CustomerDTO~~** will become **Customer**. The reason for that is that transfer objects are
+way more often used in further processing of the program and with it is way more often read.
+Whereas entity classes are only used to represent the access to the stored data on the DB and 
+used only when reading/writing to the DB. Entity naming should be 
+e.g. **~~Customer~~** -> **CustomerEntity** with the correct mapping to the table `Customer` 
+as shown below: 
+```java
+@Data
+@Entity
+@Table(name = "Customer")
+public class CustomerEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+   ...
+```
+
+
+
 ## Use MapStruct with Lombok
 MapStruct and Lombok can be used together, but you need to be aware 
 of a few things to ensure they work properly:
