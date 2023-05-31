@@ -55,6 +55,7 @@ of a few things to ensure they work properly:
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                         <annotationProcessorPaths>
+                            <!-- annotation processors; ATTENTION: order matters, at least for Lombok and MapStruct -->
                             <path>
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
