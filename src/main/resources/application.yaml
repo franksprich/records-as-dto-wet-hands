@@ -1,0 +1,33 @@
+# ===============================
+# = CUSTOM
+# ===============================
+custom:
+  base:
+    url: http://localhost:8080
+  db:
+    name: edu_customer
+# ===============================
+# = FRAMEWORKS
+# ===============================
+server:
+  port: 8080
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${custom.db.name}?currentSchema=${spring.jpa.properties.hibernate.default_schema}
+    username: alien
+    password: alien@1974
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    properties:
+      hibernate:
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
