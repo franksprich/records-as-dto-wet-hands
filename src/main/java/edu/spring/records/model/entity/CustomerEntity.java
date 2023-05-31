@@ -13,7 +13,6 @@ import lombok.ToString;
 @Data
 @Entity
 @Table(name = "Customer")
-@ToString
 public class CustomerEntity {
 
     @Id
@@ -26,4 +25,15 @@ public class CustomerEntity {
     private Integer age;
     private String username;
 
+    @Override
+    public String toString() {
+        return "CustomerEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }

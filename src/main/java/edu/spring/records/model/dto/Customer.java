@@ -15,7 +15,6 @@ public record Customer(
         String email,
         Gender gender,
         Integer age,
-        List<String> roles,
         String username
 ) {
 }

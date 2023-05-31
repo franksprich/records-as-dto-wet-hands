@@ -2,6 +2,7 @@ package edu.spring.records.service.impl;
 
 import edu.spring.records.mapper.CustomerMapper;
 import edu.spring.records.model.dto.Customer;
+import edu.spring.records.model.entity.CustomerEntity;
 import edu.spring.records.repo.CustomerRepo;
 import edu.spring.records.service.CustomerService;
 import org.springframework.stereotype.Service;
@@ -29,10 +30,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> getAllCustomers() {
-        customerRepo.findAll().forEach(System.out::println);
         return customerRepo.findAll()
                 .stream()
-                .map(customerMapper::toDto).collect(Collectors.toList());
+                .map(customerMapper::toDto).toList();
     }
 
     @Override
