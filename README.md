@@ -1,4 +1,4 @@
-# HOW TO DO / FIX...
+# Use Records as DTO
 
 ## Breaching the DTO Convention
 **As of my opinion**... it is better to NOT use the DTO postfix for transfer objects e.g.
@@ -19,8 +19,11 @@ public class CustomerEntity {
     private Long id;
    ...
 ```
-
-
+**REALLY**:   
+It does not make sense to read and write 1000 times `CustomerDto` instead of `Customer` in your 
+code only to follow the DTO naming convention. This could be solved easily by shifting 
+the postfix naming obligation to the entity by using the `*Entity` or `ET` postfix with 
+the correct `@Table` mapping as shown above.
 
 ## Use MapStruct with Lombok
 MapStruct and Lombok can be used together, but you need to be aware 
